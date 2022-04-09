@@ -1,0 +1,1 @@
+Write a PHP script that inserts a new item in an array in any position.
