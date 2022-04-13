@@ -1,5 +1,6 @@
 <?php
 
+
 declare(strict_types=1);
 
 /**
@@ -21,4 +22,4 @@ function myTernary(int $n): string
     return ($n . ' ' . $r);
 }
 
-echo myTernary(25) . PHP_EOL;
+echo myTernary(15) . PHP_EOL;
