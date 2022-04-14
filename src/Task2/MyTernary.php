@@ -14,3 +14,4 @@ function addInc(string $str, int $count = 1)
 }
 
 addInc('A01', 150);
+echo 'A01' + 1;

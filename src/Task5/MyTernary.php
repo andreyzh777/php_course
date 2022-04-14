@@ -2,24 +2,35 @@
 
 
 $a = [];
-for ($i = 0; $i < 10; $a[$i] = ++$i) ; //creat array 10 element
+for ($i = 0; $i < 10; $a[$i] = $i++) ; //creat array 10 element
 
-function insert_array(&$b, $Val, $n): void //Val - вставляемое значение,  n - в какую часть массива, от 0
+/**
+ * @param array $arr Array to change
+ * @param mixed $value Value to insert
+ * @param int $n Insert position
+ * @return void
+ */
+function insert_array(array &$arr, mixed $value, int $n): void
 {
-    $k = count($b);
-    if ($k < $n) {
-        for ($i = $k; $i < $n; $i++) $b[$i] = null;
-        $b[$n] = $Val;
+    $count = count($arr);
+    if ($count < $n) {
+        for ($i = $count; $i < $n; $i++) {
+            $arr[$i] = null;
+        }
+
+        $arr[$n] = $value;
         return;
     }
 
-    for ($i = $n; $i <= $k; $i++) {
-        $tem = $b[$i];
-        $b[$i] = $Val;
-        $Val = $tem;
+    for ($i = $n; $i <= $count; $i++) {
+        $temp = $arr[$i];
+        $arr[$i] = $value;
+        $value = $temp;
     }
-    $b[$i] = $Val;
+    $arr[$i] = $value;
 }
 
+print_r($a);
 insert_array($a, 15, 0);
-foreach ($a as $key => $val) echo $val . PHP_EOL;
+print_r($a);
+//foreach ($a as $key => $val) echo $val . PHP_EOL;
