@@ -1,7 +1,15 @@
 <?php
 $s = '{"Title": "The Cuckoos Calling","Author": "Robert Galbraith","Detail": {"Publisher": "Little Brown"}}';
 
-$a= json_decode($s);
-var_dump($a);
-// (reset($a); ($k= key($a)); next ($a))
-//    echo $k.": "$a[$k].PHP_EOL;
+function outputStrData (array $a)
+{
+    foreach ($a as $key => $data) {
+        if ('string' == gettype($data)) {
+            echo " " . $key . " => " . $data . " " . PHP_EOL;
+            continue;
+        }
+        outputStrData( $data );
+    }
+}
+
+outputStrData( json_decode($s, true) );
