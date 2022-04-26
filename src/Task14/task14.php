@@ -7,13 +7,20 @@ $a = [
     "es" => "creat"
 ];
 
-function smes (array $arr) {
-    $b = array_flip ($arr);
-    shuffle ($arr);
-    $arr = array_flip ($arr);
-    foreach ($arr as $key => $v) {
-        $arr [$key] = $b [$key];
+function myShuffle(array $arr): array
+{
+    $result = [];
+    $temp = array_flip($arr);
+    shuffle($arr);
+//    $arr = array_flip($arr);
+
+    foreach ($arr as $val) {
+        $result[$val] = $temp[$val];
     }
-    return $arr = array_flip ($arr);
+
+    return array_flip($result);
 }
-var_dump (smes($a));
+
+var_dump(myShuffle($a));
+
+//myShuffle($a);
