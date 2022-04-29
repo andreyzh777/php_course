@@ -1,6 +1,6 @@
 <?php
 $number = 5689;
-function summNumber (int $chislo)
+function summNumber(int $chislo) : int
 {
     $n = 0;
     while ($chislo)

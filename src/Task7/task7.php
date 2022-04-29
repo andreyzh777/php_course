@@ -1,6 +1,6 @@
 <?php
 $birthday = "05.11.1985";
-$today = date("z") + 1;   // количество дней с начала года
+$today = (date("z")) + 1;   // количество дней с начала года
 $birthdayArray = [];
 $birthdayArray = explode('.', $birthday); //
 $dayToB=$birthdayArray[0];
@@ -18,8 +18,8 @@ switch ($birthdayArray[1])
     case 11 : $dayToB+=305; break;
     case 12 : $dayToB+=335; break;
 }
-$year_today=date('Y');  // текущий год
-if (! ($year_today %4)) {
+$yearToday=date('Y');  // текущий год
+if (! ($yearToday %4)) {
     $dayToB++;                    // высокосный год
 }
 $delta=$dayToB-$today;

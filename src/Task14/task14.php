@@ -7,13 +7,14 @@ $a = [
     "es" => "creat"
 ];
 
-function smes (array $arr) {
-    $b = array_flip ($arr);
-    shuffle ($arr);
-    $arr = array_flip ($arr);
+function mixer(array $arr) : array
+{
+    $b = array_flip($arr);
+    shuffle($arr);
+    $arr = array_flip($arr);
     foreach ($arr as $key => $v) {
-        $arr [$key] = $b [$key];
+        $arr[$key] = $b[$key];
     }
-    return $arr = array_flip ($arr);
+    return $arr = array_flip($arr);
 }
-var_dump (smes($a));
+var_dump (mixer($a));
