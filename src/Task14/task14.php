@@ -15,6 +15,8 @@ function mixer(array $arr) : array
     foreach ($arr as $key => $v) {
         $arr[$key] = $b[$key];
     }
+
     return $arr = array_flip($arr);
 }
+
 var_dump (mixer($a));
