@@ -1,22 +1,20 @@
 <?php
 
-function sierchEl(array $a): mixed
+function searchEl(array $a): mixed
 {
-    $n = count ($a);
     $countA = array_count_values($a);
     arsort($countA);
-    $elementCount = reset ($countA);
-    $nameElement = key ($countA);
-    if ($elementCount < $n/2) {
-
+    $elementCount = reset($countA);
+    if ($elementCount < count($a)/2) {
         return false;
     }
+    $nameElement = key($countA);
 
     return $nameElement;
 }
 
 $array = [1, 2, 3, 4, 5, 5, 5, 5, 5, 5, 6];
-$element = sierchEl($array);
+$element = searchEl($array);
 if ($element !== false) {
     echo $element . PHP_EOL;
 }
