@@ -3,7 +3,7 @@ function findElements(array $a): array
 {
     $tempA = [];
     $kolElementA = count($a);
-    for ($i=0, $j=1; $i < $kolElementA; $i++, $j++)
+    for ($i=0, $j=$a[0]; $i < $kolElementA; $i++, $j++)
     {
         if ($a[$i] != $j){
             do
@@ -18,5 +18,5 @@ function findElements(array $a): array
     return $tempA;
 }
 
-$a = [1,2,3,6,7,8,11];
+$a = [1,2,3,6,7,8,10];
 var_dump( findElements($a));
