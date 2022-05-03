@@ -7,14 +7,14 @@ $a = [
     "es" => "creat"
 ];
 
-function mixer(array $arr) : array
+function mixer(array $arr): array
 {
-    $b = array_flip($arr);
+    $flipArr = array_flip($arr);
     shuffle($arr);
-    $arr = array_flip($arr);
-    foreach ($arr as $key => $v) {
-        $arr[$key] = $b[$key];
+    $result = [];
+    foreach ($arr as  $vel) {
+        $result[$vel] = $flipArr[$vel];
     }
-    return $arr = array_flip($arr);
+    return array_flip($result);
 }
 var_dump (mixer($a));
